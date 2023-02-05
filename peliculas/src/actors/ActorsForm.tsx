@@ -1,0 +1,48 @@
+import { Form, Formik, FormikHelpers } from "formik";
+import { useNavigate } from "react-router-dom";
+import Button from "../utilities/Button";
+import FormGroupText from "../utilities/FormGroupText";
+import { actorCreationDto } from "./actors.model.d";
+import * as Yup from "yup";
+import FormGroupDate from "../utilities/FormGroupDate";
+
+export default function ActorsForm(props: actorsFormProps) {
+  const navigate = useNavigate();
+  return (
+    <Formik
+      initialValues={props.model}
+      onSubmit={props.onSubmit}
+      validationSchema={Yup.object({
+        name: Yup.string()
+          .required("This field is required")
+          .firstLetterUpperCase(),
+        dateOfBirth: Yup.date().nullable().required("This field is required"),
+      })}>
+      {(formikProps) => (
+        <Form>
+          <div className='form-group'>
+            <FormGroupText fieldName='name' label='Name' />
+            <FormGroupDate fieldName='dateOfBirth' fieldLabel='Date Of Birth' />
+          </div>
+          <Button type='submit' disabled={formikProps.isSubmitting}>
+            Save
+          </Button>
+          <Button
+            type='button'
+            className='btn btn-secondary'
+            onClick={() => navigate("/actors")}>
+            Return
+          </Button>
+        </Form>
+      )}
+    </Formik>
+  );
+}
+
+interface actorsFormProps {
+  model: actorCreationDto;
+  onSubmit(
+    values: actorCreationDto,
+    actions: FormikHelpers<actorCreationDto>
+  ): void;
+}

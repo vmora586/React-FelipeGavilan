@@ -1,0 +1,24 @@
+command to install react router
+npm i react-router-dom@5.2
+-- Esta versión no trabaja con React 18, es necesario instalar la version 6.4.2 
+link a la solucion: https://stackoverflow.com/questions/72687496/link-is-not-working-in-react-router-dom-in-version-5-3-0-please-anyone-resolve
+
+--installing react router types when working with typescript
+npm i --save-dev @types/react-router-dom
+
+
+--when working with yup for adding cutomized validation rules, it's required to register the valiations file
+-- in the App.tsx file, by adding the CustomValidations() sentence (replace the name before the paretesis with your validatios file one),
+after the using and before than the renturn statement.
+
+--Once done, it's also required to add a file call global.d.ts to enable the validations on the components elements. The file must contain this instructios
+with in it:
+
+import {StringSchema} from 'yup';
+
+declare module 'yup'{
+    class StringSchema{
+        yourValidationRule():this;
+    }
+}
+
