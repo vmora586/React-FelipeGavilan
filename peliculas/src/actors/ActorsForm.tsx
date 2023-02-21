@@ -5,6 +5,8 @@ import FormGroupText from "../utilities/FormGroupText";
 import { actorCreationDto } from "./actors.model.d";
 import * as Yup from "yup";
 import FormGroupDate from "../utilities/FormGroupDate";
+import FormGroupImage from "../utilities/FormGroupImage";
+import FormGroupMarkdown from "../utilities/FormGroupMarkdown";
 
 export default function ActorsForm(props: actorsFormProps) {
   const navigate = useNavigate();
@@ -23,6 +25,12 @@ export default function ActorsForm(props: actorsFormProps) {
           <div className='form-group'>
             <FormGroupText fieldName='name' label='Name' />
             <FormGroupDate fieldName='dateOfBirth' fieldLabel='Date Of Birth' />
+            <FormGroupImage
+              field='photo'
+              label='photo'
+              imageUri={props.model.photoUri}
+            />
+            <FormGroupMarkdown field={"biography"} label={"Biography"} />
           </div>
           <Button type='submit' disabled={formikProps.isSubmitting}>
             Save
