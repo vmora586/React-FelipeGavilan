@@ -1,4 +1,4 @@
-import { IMovie } from "./movie.model";
+import { IMovie } from "../models/movie.model";
 import css from "./movie.module.css";
 
 export default function Movie(props: movieProps) {

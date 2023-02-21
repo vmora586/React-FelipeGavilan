@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Button from "../utilities/Button";
 import FormGroupText from "../utilities/FormGroupText";
 import * as Yup from "yup";
-import { gendreCreationDto } from "./gendres.model";
+import { gendreCreationDto } from "../models/gendres.model";
 
 export default function GendresForm(props: gendreFormProps) {
   const navigate = useNavigate();

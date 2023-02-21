@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ILandingPage, IMovie } from "./movie.model";
+import { ILandingPage, IMovie } from "../models/movie.model";
 import Movies from "./Movies";
 
 export default function LandingPage() {

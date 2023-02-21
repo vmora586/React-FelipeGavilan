@@ -1,4 +1,4 @@
-import { IMovie } from "./movie.model";
+import { IMovie } from "../models/movie.model";
 import Movie from "./Movie";
 import css from "./movies.module.css";
 import GenericList from "../utilities/GenericList";

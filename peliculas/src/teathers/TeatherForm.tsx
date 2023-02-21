@@ -1,4 +1,4 @@
-import { teatherCreationDto } from "./teathers.model";
+import { teatherCreationDto } from "../models/teathers.model";
 import { Form, Formik, FormikHelpers } from "formik";
 import * as Yup from "yup";
 import FormGroupText from "../utilities/FormGroupText";

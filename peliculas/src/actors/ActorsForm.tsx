@@ -2,7 +2,7 @@ import { Form, Formik, FormikHelpers } from "formik";
 import { useNavigate } from "react-router-dom";
 import Button from "../utilities/Button";
 import FormGroupText from "../utilities/FormGroupText";
-import { actorCreationDto } from "./actors.model.d";
+import { actorCreationDto } from "../models/actors.model";
 import * as Yup from "yup";
 import FormGroupDate from "../utilities/FormGroupDate";
 import FormGroupImage from "../utilities/FormGroupImage";

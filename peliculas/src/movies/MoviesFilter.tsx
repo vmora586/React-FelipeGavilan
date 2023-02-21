@@ -1,5 +1,5 @@
 import { Field, Form, Formik } from "formik";
-import { gendreDto } from "../gendres/gendres.model";
+import { gendreDto } from "../models/gendres.model";
 import Button from "../utilities/Button";
 
 export default function MoviesFilter(props: moviesFilterFormProps) {
