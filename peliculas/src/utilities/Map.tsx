@@ -15,7 +15,7 @@ let defaultIcon = L.icon({
 L.Marker.prototype.options.icon = defaultIcon;
 
 export default function Map(props: mapProps) {
-  const [coordinates, setCoordinates] = useState<coordinateDto[]>([]);
+  const [coordinates, setCoordinates] = useState<coordinateDto[]>(props.coordinates);
 
   return (
     <MapContainer
@@ -29,6 +29,7 @@ export default function Map(props: mapProps) {
       <MapClick
         setPointer={(coordinates) => {
           setCoordinates([coordinates]);
+         props.onHandleMapClick(coordinates);
         }}
       />
       {coordinates.map((coordinate, index) => {
@@ -55,4 +56,6 @@ function CustomMarker(props: coordinateDto) {
 
 export interface mapProps {
   height: string;
+  coordinates: coordinateDto[];
+  onHandleMapClick(coordinates:coordinateDto):void;
 }

@@ -4,10 +4,19 @@ import * as Yup from "yup";
 import FormGroupText from "../utilities/FormGroupText";
 import Button from "../utilities/Button";
 import { useNavigate } from "react-router-dom";
-import Map from "../utilities/Map";
+import FormMap from "../utilities/FormMap";
+import { coordinateDto } from "../models/coordinate.model";
 
 export default function TeatherForm(props: TheaterFormProps) {
   const navigate = useNavigate();
+
+  function formatCoordinates():coordinateDto[] | undefined {
+    if(props.model.latitude && props.model.longitude){
+       const resp : coordinateDto ={ lat: props.model.latitude, long: props.model.longitude};
+       return [resp];
+    }
+    return undefined;
+  }
   return (
     <Formik
       initialValues={props.model}
@@ -21,7 +30,7 @@ export default function TeatherForm(props: TheaterFormProps) {
         <Form>
           <FormGroupText label='name' fieldName='name' />
           <div style={{ marginBottom: "1rem" }}>
-            <Map height='500px' />
+            <FormMap latitudeField="latitude" longitudeField="longitude" coordinates={formatCoordinates()!}/>
           </div>
           <Button disabled={formikProps.isSubmitting} type='submit'>
             Save

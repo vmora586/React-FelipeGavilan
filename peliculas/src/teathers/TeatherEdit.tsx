@@ -5,7 +5,7 @@ export default function TeatherEdit() {
     <>
       <h3>Edit Teather</h3>
       <TeatherForm
-        model={{ name: "Mayorca" }}
+        model={{ name: "Mayorca" , latitude : 6.339397, longitude:-75.544203 }}
         onSubmit={(values) => console.log(values)}
       />
     </>
