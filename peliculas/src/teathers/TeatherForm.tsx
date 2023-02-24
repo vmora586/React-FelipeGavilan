@@ -28,7 +28,7 @@ export default function TeatherForm(props: TheaterFormProps) {
       })}>
       {(formikProps) => (
         <Form>
-          <FormGroupText label='name' fieldName='name' />
+          <FormGroupText label='name' name='name' />
           <div style={{ marginBottom: "1rem" }}>
             <FormMap latitudeField="latitude" longitudeField="longitude" coordinates={formatCoordinates()!}/>
           </div>

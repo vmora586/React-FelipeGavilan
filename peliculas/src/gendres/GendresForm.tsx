@@ -19,7 +19,7 @@ export default function GendresForm(props: gendreFormProps) {
       {(formickProps) => (
         <Form>
           <div className='form-group'>
-            <FormGroupText fieldName='name' label='Name'></FormGroupText>
+            <FormGroupText name='name' label='Name'></FormGroupText>
           </div>
           <Button disabled={formickProps.isSubmitting} type='submit'>
             {formickProps.isSubmitting ? "Wait" : "Save"}

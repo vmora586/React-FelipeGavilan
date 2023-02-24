@@ -23,8 +23,8 @@ export default function ActorsForm(props: actorsFormProps) {
       {(formikProps) => (
         <Form>
           <div className='form-group'>
-            <FormGroupText fieldName='name' label='Name' />
-            <FormGroupDate fieldName='dateOfBirth' fieldLabel='Date Of Birth' />
+            <FormGroupText name='name' label='Name' />
+            <FormGroupDate name='dateOfBirth' label='Date Of Birth' />
             <FormGroupImage
               field='photo'
               label='photo'
