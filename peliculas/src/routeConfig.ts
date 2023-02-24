@@ -9,6 +9,9 @@ import TeatherIndex from "./teathers/TeatherIndex";
 import TeatherCreate from "./teathers/TeatherCreate";
 import TeatherEdit from "./teathers/TeatherEdit";
 import MoviesFilter from "./movies/MoviesFilter";
+import MovieIndex from "./movies/MovieIndex";
+import MoviesCreate from "./movies/MoviesCreate";
+import MoviesEdit from "./movies/MoviesEdit";
 
 const routes = [
   { path: "/", component: LandingPage },
@@ -24,6 +27,10 @@ const routes = [
   { path: "/teathers/create", component: TeatherCreate },
   { path: "/teathers/edit/:id", component: TeatherEdit },
   { path: "/search", component: MoviesFilter },
+
+  { path: "/movies", component: MovieIndex },
+  { path: "/movies/create", component: MoviesCreate },
+  { path: "/movies/edit/:id", component: MoviesEdit },
 
   { path: "*", component: LandingPage },
 ];
