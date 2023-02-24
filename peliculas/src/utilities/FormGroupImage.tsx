@@ -1,7 +1,7 @@
 import { ChangeEvent, useState } from "react";
 import { useFormikContext } from "formik";
 
-export default function FormGroupImage(props: FormGroupImageProps) {
+export default function FormGroupImage(props: IFormGroupImageProps) {
   const divStyle = { marginTop: "10px" };
   const imageStyle = { width: "450px" };
   const [imageBase64, setImageBase64] = useState("");
@@ -67,7 +67,7 @@ export default function FormGroupImage(props: FormGroupImageProps) {
   );
 }
 
-export interface FormGroupImageProps {
+export interface IFormGroupImageProps {
   field: string;
   label: string;
   imageUri?: string;

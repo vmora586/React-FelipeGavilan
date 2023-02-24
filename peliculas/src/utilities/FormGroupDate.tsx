@@ -5,27 +5,27 @@ export default function FormGroupDate(props: FormGroupDateProps) {
   const { values, validateForm, touched, errors } = useFormikContext<any>();
   return (
     <div className='form-group'>
-      <label htmlFor={props.fieldName}>{props.fieldLabel}</label>
+      <label htmlFor={props.name}>{props.label}</label>
       <input
         type='date'
         className='form-control'
-        id={props.fieldName}
-        name={props.fieldName}
-        defaultValue={values[props.fieldName]?.toLocaleDateString("en-CA")}
+        id={props.name}
+        name={props.name}
+        defaultValue={values[props.name]?.toLocaleDateString("en-CA")}
         onChange={(e) => {
           const displayedDate = new Date(e.currentTarget.value + "T00:00:00");
-          values[props.fieldName] = displayedDate;
+          values[props.name] = displayedDate;
           validateForm();
         }}
       />
-      {touched[props.fieldName] && errors[props.fieldName] ? (
-        <ShowErrorField message={errors[props.fieldName]?.toString()} />
+      {touched[props.name] && errors[props.name] ? (
+        <ShowErrorField message={errors[props.name]?.toString()} />
       ) : null}
     </div>
   );
 }
 
 interface FormGroupDateProps {
-  fieldName: string;
-  fieldLabel: string;
+  name: string;
+  label: string;
 }
