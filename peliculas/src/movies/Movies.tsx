@@ -3,7 +3,7 @@ import Movie from "./Movie";
 import css from "./movies.module.css";
 import GenericList from "../utilities/GenericList";
 
-export default function Movies(props: moviesProps) {
+export default function Movies(props: IMoviesProps) {
   return (
     <GenericList templateList={props.movies}>
       <div className={css.div}>
@@ -15,6 +15,6 @@ export default function Movies(props: moviesProps) {
   );
 }
 
-interface moviesProps {
+interface IMoviesProps {
   movies?: IMovie[];
 }
