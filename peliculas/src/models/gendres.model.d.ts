@@ -1,8 +1,8 @@
-export interface gendreCreationDto {
+export interface IGendreCreationDto {
   name: string;
 }
 
-export interface gendreDto {
+export interface IGendreDto {
   id: number;
   name: string;
 }

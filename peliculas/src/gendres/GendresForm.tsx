@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Button from "../utilities/Button";
 import FormGroupText from "../utilities/FormGroupText";
 import * as Yup from "yup";
-import { gendreCreationDto } from "../models/gendres.model";
+import { IGendreCreationDto } from "../models/gendres.model";
 
 export default function GendresForm(props: gendreFormProps) {
   const navigate = useNavigate();
@@ -36,9 +36,9 @@ export default function GendresForm(props: gendreFormProps) {
 }
 
 interface gendreFormProps {
-  model: gendreCreationDto;
+  model: IGendreCreationDto;
   onSubmit(
-    values: gendreCreationDto,
-    actions: FormikHelpers<gendreCreationDto>
+    values: IGendreCreationDto,
+    actions: FormikHelpers<IGendreCreationDto>
   ): void;
 }
