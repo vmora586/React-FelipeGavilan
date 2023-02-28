@@ -1,5 +1,5 @@
 import { Field, Form, Formik } from "formik";
-import { gendreDto } from "../models/gendres.model";
+import { IGendreDto } from "../models/gendres.model";
 import Button from "../utilities/Button";
 
 export default function MoviesFilter(props: moviesFilterFormProps) {
@@ -10,9 +10,9 @@ export default function MoviesFilter(props: moviesFilterFormProps) {
     onTheaters: false,
   };
 
-  const gendres: gendreDto[] = [
-    { id: 1, name: "Action" } as gendreDto,
-    { id: 2, name: "Comedy" } as gendreDto,
+  const gendres: IGendreDto[] = [
+    { id: 1, name: "Action" } as IGendreDto,
+    { id: 2, name: "Comedy" } as IGendreDto,
   ];
 
   return (
