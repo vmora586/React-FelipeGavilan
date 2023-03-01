@@ -1,7 +1,4 @@
-import { FormikHelpers } from "formik";
-import { useNavigate } from "react-router-dom";
-import Button from "../utilities/Button";
-import TeatherForm from "./TeatherForm";
+import TeatherForm from "./TheaterForm";
 
 export default function TeatherCreate() {
   return (
