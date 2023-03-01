@@ -41,13 +41,13 @@ export default function MoviesForm(props: IMoviesFormProps) {
         props.onSubmit(values, actions);
       }}
       validationSchema={Yup.object({
-        title: Yup.string()
+        name: Yup.string()
           .required("This field is required")
           .firstLetterUpperCase(),
       })}>
       {(formikProps) => (
         <Form>
-          <FormGroupText name='title' label='Title' />
+          <FormGroupText name='name' label='Name' />
           <FormGroupCheckBox label='On theaters' field='onTheaters' />
           <FormGroupText name='Trailer' label='Trailer' />
           <FormGroupDate name='releaseDate' label='Release date' />
