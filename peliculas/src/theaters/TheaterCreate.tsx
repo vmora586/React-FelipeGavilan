@@ -1,10 +1,10 @@
-import TeatherForm from "./TheaterForm";
+import TheaterForm from "./TheaterForm";
 
-export default function TeatherCreate() {
+export default function TheaterCreate() {
   return (
     <>
       <h3>Create Teather</h3>
-      <TeatherForm
+      <TheaterForm
         model={{ name: "" }}
         onSubmit={(values) => console.log(values)}
       />

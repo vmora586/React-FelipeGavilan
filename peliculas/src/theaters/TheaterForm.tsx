@@ -1,4 +1,4 @@
-import { teatherCreationDto } from "../models/teathers.model";
+import { theaterCreationDto } from "../models/theaters.model";
 import { Form, Formik, FormikHelpers } from "formik";
 import * as Yup from "yup";
 import FormGroupText from "../utilities/FormGroupText";
@@ -7,13 +7,16 @@ import { useNavigate } from "react-router-dom";
 import FormMap from "../utilities/FormMap";
 import { coordinateDto } from "../models/coordinate.model";
 
-export default function TeatherForm(props: TheaterFormProps) {
+export default function TheaterForm(props: TheaterFormProps) {
   const navigate = useNavigate();
 
-  function formatCoordinates():coordinateDto[] | undefined {
-    if(props.model.latitude && props.model.longitude){
-       const resp : coordinateDto ={ lat: props.model.latitude, long: props.model.longitude};
-       return [resp];
+  function formatCoordinates(): coordinateDto[] | undefined {
+    if (props.model.latitude && props.model.longitude) {
+      const resp: coordinateDto = {
+        lat: props.model.latitude,
+        long: props.model.longitude,
+      };
+      return [resp];
     }
     return undefined;
   }
@@ -30,7 +33,11 @@ export default function TeatherForm(props: TheaterFormProps) {
         <Form>
           <FormGroupText label='name' name='name' />
           <div style={{ marginBottom: "1rem" }}>
-            <FormMap latitudeField="latitude" longitudeField="longitude" coordinates={formatCoordinates()!}/>
+            <FormMap
+              latitudeField='latitude'
+              longitudeField='longitude'
+              coordinates={formatCoordinates()!}
+            />
           </div>
           <Button disabled={formikProps.isSubmitting} type='submit'>
             Save
@@ -48,9 +55,9 @@ export default function TeatherForm(props: TheaterFormProps) {
 }
 
 export interface TheaterFormProps {
-  model: teatherCreationDto;
+  model: theaterCreationDto;
   onSubmit(
-    values: teatherCreationDto,
-    actions: FormikHelpers<teatherCreationDto>
+    values: theaterCreationDto,
+    actions: FormikHelpers<theaterCreationDto>
   ): void;
 }
