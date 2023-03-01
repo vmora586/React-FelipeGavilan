@@ -5,13 +5,13 @@ import GendreEdit from "./gendres/GendreEdit";
 import ActorIndex from "./actors/ActorIndex";
 import ActorCreate from "./actors/ActorCreate";
 import ActorEdit from "./actors/ActorEdit";
-import TeatherIndex from "./theaters/TheaterIndex";
-import TeatherCreate from "./theaters/TheaterCreate";
-import TeatherEdit from "./theaters/TheaterEdit";
 import MoviesFilter from "./movies/MoviesFilter";
 import MovieIndex from "./movies/MovieIndex";
 import MoviesCreate from "./movies/MoviesCreate";
 import MoviesEdit from "./movies/MoviesEdit";
+import TheaterIndex from "./theaters/TheaterIndex";
+import TheaterCreate from "./theaters/TheaterCreate";
+import TheaterEdit from "./theaters/TheaterEdit";
 
 const routes = [
   { path: "/", component: LandingPage },
@@ -23,9 +23,9 @@ const routes = [
   { path: "/actors/create", component: ActorCreate },
   { path: "/actors/edit/:id", component: ActorEdit },
 
-  { path: "/theaters", component: TeatherIndex },
-  { path: "/theaters/create", component: TeatherCreate },
-  { path: "/theaters/edit/:id", component: TeatherEdit },
+  { path: "/theaters", component: TheaterIndex },
+  { path: "/theaters/create", component: TheaterCreate },
+  { path: "/theaters/edit/:id", component: TheaterEdit },
   { path: "/search", component: MoviesFilter },
 
   { path: "/movies", component: MovieIndex },
